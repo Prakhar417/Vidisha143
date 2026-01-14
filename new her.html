@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Vidisha ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* Body & Background */
+  body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    overflow-x: hidden;
+    text-align: center;
+    background: radial-gradient(circle at center, #ffd6e8, #f9a8d4, #ffe1f0);
+    position: relative;
+    height: 100vh;
+    color: #4a1c2d;
+  }
+
+  /* Intro overlay */
+  .intro {
+    position: fixed; top:0; left:0; right:0; bottom:0;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    background: linear-gradient(to bottom, #ffd6e8, #f9a8d4);
+    z-index: 10;
+  }
+
+  .btn {
+    padding: 20px 50px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg,#ff90c1,#ffccf1,#ff90c1);
+    border: none; border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: pulseBtn 2s infinite;
+    transition: transform 0.3s, background 0.5s;
+  }
+  .btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg,#ffccf1,#ff90c1,#ffe1f0);
+  }
+
+  @keyframes pulseBtn {0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+
+  /* Container & Card */
+  .container { padding: 40px 20px; max-width: 1000px; margin: auto; }
+  .heart { font-size: 45px; animation: pulse 1.5s infinite; margin-bottom:10px;}
+  @keyframes pulse {0%{transform:scale(1)}50%{transform:scale(1.25)}100%{transform:scale(1)}}
+
+  .card {
+    background: rgba(255,255,255,0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+  }
+  .card.show { opacity: 1; transform: translateY(0); }
+
+  .paragraph, .poem {
+    font-size: 1.2em; line-height: 1.8; white-space: pre-line; margin-bottom: 20px;
+    opacity:0; transform: translateY(20px); transition: all 1s ease;
+  }
+  .paragraph.show, .poem.show { opacity:1; transform: translateY(0); }
+
+  /* Photo Grid */
+  .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 15px; margin-top:30px;}
+  .photo-grid img { width:100%; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.2); opacity:0; transform:scale(0.8); transition: transform 0.8s, opacity 0.8s;}
+  .photo-grid img.show { opacity:1; transform:scale(1); }
+
+  /* Hearts & Confetti */
+  .floating-heart { position:absolute; font-size:20px; animation: floatUp 6s linear infinite; }
+  @keyframes floatUp {0%{transform:translateY(0) scale(1); opacity:1}50%{transform:translateY(-150px) scale(1.3);opacity:0.7}100%{transform:translateY(-300px) scale(1);opacity:0}}
+
+  .confetti { position:absolute; width:10px; height:10px; background:#fff; opacity:0.8; top:0; animation: fall linear infinite;}
+  @keyframes fall {0%{transform:translateY(0) rotate(0deg);}100%{transform:translateY(100vh) rotate(360deg);}}
+
+  footer { margin-top:50px; font-size:1em; opacity:0.85;}
+
+  /* Sparkling stars background */
+  .star { position:absolute; background:white; border-radius:50%; width:2px; height:2px; opacity:0.8; animation: twinkle 2s infinite alternate;}
+  @keyframes twinkle {0%{opacity:0.3}50%{opacity:1}100%{opacity:0.3}}
+</style>
+</head>
+
+<body>
+
+<!-- Intro Screen -->
+<div class="intro" id="intro">
+  <h1>Happy Birthday Vidisha ❤️</h1>
+  <h2>For my Kuchu Puchu 💕</h2>
+  <button class="btn" onclick="showMain()">Surprise for you Babbyyy🤭💗</button>
+</div>
+
+<!-- Main Content -->
+<div class="container" id="main" style="display:none;">
+  <div class="heart">❤️</div>
+  <h2>20th — The day my world became brighter ✨</h2>
+
+  <!-- Hidden Audio -->
+  <audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card" id="card">
+    <div class="paragraph" id="paragraph">
+HEYYYY BABBBYYYYY, finally this day is here nd I am soooo exciitedddd myyy babbbyyy!  
+I want you to knowww that I am forever and ever with you meri jaaan.  
+I am never leaving you and aapko kabhi kahin jaane bhi nhi dunngaaaaa, you are forever mineeee babby.  
+I wish I'm making this day special to youuuu and aapkoo pasannddd aaye aajka dinn,  
+and agar aaj apke aankho se aasu bhi aaye toh I wish wohhh aasuuu, Khushi se ho, as tears of happinesss hehehe🫠✨  
+Aaapke liye aapke Jaisi pyaari si linesss hehehe.🤭💗
+    </div>
+
+    <div class="poem" id="poem">
+Aaj ka din hai sirf aapke liye,  
+Har pal chamke aapki khushi ke liye.  
+Door ho kar bhi saath hai ye dil mera,  
+Kuchu Puchu meri jaan, bas aapka ye pyara sahara.
+
+Chaand bhi sharmaaye aapki muskaan ke aage,  
+Har sitara lage aapke naam ke saaye.  
+Janamdin mubarak ho meri pyaari Vidisha,  
+Aap ho meri duniya, meri rooh ka ishaara.
+🫠💌✨
+
+Happiessttt bdaayyyyy Vidisshhaaaa🫠💗
+    </div>
+
+    <!-- Photos -->
+    <div class="photo-grid" id="photoGrid">
+      <img src="https://i.ibb.co/gbR5RkPg/1.jpg">
+      <img src="https://i.ibb.co/q3BVWZ8p/2.jpg">
+      <img src="https://i.ibb.co/KJJS9fS/3.jpg">
+      <img src="https://i.ibb.co/HD4y6tMX/4.jpg">
+      <img src="https://i.ibb.co/V03C2TLZ/5.jpg">
+      <img src="https://i.ibb.co/7tTQctNt/6.jpg">
+      <img src="https://i.ibb.co/bM8qxB0f/7.jpg">
+      <img src="https://i.ibb.co/vCJQbNBs/8.jpg">
+      <img src="https://i.ibb.co/kgk5T6Qg/9.jpg">
+      <img src="https://i.ibb.co/zVgWqq7V/10.jpg">
+      <img src="https://i.ibb.co/Z1NRQtdH/11.jpg">
+      <img src="https://i.ibb.co/rKbJPD9c/12.jpg">
+    </div>
+  </div>
+
+  <footer>
+    Always yours,<br>
+    Someone who loves you endlessly ❤️
+  </footer>
+</div>
+
+<script>
+function showMain() {
+  // Hide intro, show main
+  document.getElementById('intro').style.display='none';
+  const main=document.getElementById('main');
+  main.style.display='block';
+
+  // Play music
+  const music=document.getElementById('bgMusic');
+  music.play();
+
+  // Animate card and texts
+  document.getElementById('card').classList.add('show');
+  setTimeout(()=>{document.getElementById('paragraph').classList.add('show');},500);
+  setTimeout(()=>{document.getElementById('poem').classList.add('show');},1500);
+
+  // Fade-in images
+  const images=document.querySelectorAll('#photoGrid img');
+  images.forEach((img,i)=>{setTimeout(()=>{img.classList.add('show');},2000+i*400);});
+
+  // Floating hearts and confetti
+  createHearts(25);
+  createConfetti(40);
+  createStars(50);
+}
+
+// Hearts
+function createHearts(num){
+  for(let i=0;i<num;i++){
+    const heart=document.createElement('div');
+    heart.classList.add('floating-heart');
+    heart.innerText='💖';
+    heart.style.left=Math.random()*90+'vw';
+    heart.style.animationDuration=(4+Math.random()*4)+'s';
+    heart.style.fontSize=(15+Math.random()*20)+'px';
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+  }
+  setTimeout(()=>createHearts(num),3000);
+}
+
+// Confetti
+function createConfetti(num){
+  for(let i=0;i<num;i++){
+    const confetti=document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.left=Math.random()*100+'vw';
+    confetti.style.background=`hsl(${Math.random()*360},70%,80%)`;
+    confetti.style.width=Math.random()*10+5+'px';
+    confetti.style.height=confetti.style.width;
+    confetti.style.animationDuration=3+Math.random()*3+'s';
+    document.body.appendChild(confetti);
+    setTimeout(()=>confetti.remove(),6000);
+  }
+  setTimeout(()=>createConfetti(num),2000);
+}
+
+// Sparkling stars
+function createStars(num){
+  for(let i=0;i<num;i++){
+    const star=document.createElement('div');
+    star.classList.add('star');
+    star.style.top=Math.random()*100+'vh';
+    star.style.left=Math.random()*100+'vw';
+    star.style.width=Math.random()*2+1+'px';
+    star.style.height=star.style.width;
+    star.style.animationDuration=(1+Math.random()*2)+'s';
+    document.body.appendChild(star);
+    setTimeout(()=>star.remove(),4000);
+  }
+  setTimeout(()=>createStars(num),1500);
+}
+</script>
+</body>
+</html>
